@@ -1,0 +1,302 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查询表页面</title>
+    
+    <script type="text/javascript" src="js/tree.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/jedate.js"></script>
+    <!-- 部门tree -->
+    <link rel="stylesheet" href="css/demo.css" type="text/css">
+    <link rel="stylesheet" href="css/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+    <!-- 结算js  -->  
+    <script>
+	$(function(){
+		//                   取消 重置 保存
+		totalNumber();
+		subtotal();
+		totalMoney();
+		del_tr();
+		$(".count_inp").live('focus',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$(".count_inp").live('blur',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$(".count_inp").live('keydown',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		
+		$(".count_inp").live('keypress',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$(".count_inp").live('keyup',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$("#del_tr").click(function(){
+			totalNumber();
+			subtotal();
+			totalMoney();
+			del_tr()
+		});
+		
+		//删除一行 后面新增一行  .total_tr #create_order
+		function del_tr(){
+			/*给列的序号赋值
+			var tr=$(".cart_row");
+			tr.children(".order_num").html(tr.length);
+			*/
+			var tr=$(".cart_row");
+			if($(".cart_row").checked == true){
+				alert(11);
+			}
+			else{
+				//	alert(12);
+			}
+			
+			paixu_id();
+			if(tr.length<11){
+				var creatr_tr="<tr class='cart_row'>"+$("#copy_tr").html()+"</tr>";
+				$("#cartTable").append(creatr_tr);	
+			}
+			paixu_id();
+			
+		};
+		
+		//排序 自动id
+		function paixu_id(){
+			var tr=$(".cart_row");
+			for(var i = 0; i <$(".cart_row").length; i++  ){
+				$(tr[i]).children(".order_num").html(i+1); 
+			}	
+		};
+		//行内价格 .subtotal 单价 .price  tr:.cart_row   输入框 .count_inp
+		function subtotal(){
+			var tr=$(".cart_row");
+			for(var i=0;i<tr.length;i++){
+				var num=$(tr[i]).children("td").eq(5).children(".count_inp").val();//数量
+				var price=$(tr[i]).children(".price").html(); //价格
+				//alert($(tr[i]).children("td").eq(5).children(".count_inp").val());//价格
+				$(tr[i]).children(".subtotal").html(num*price);//行内总结
+				//alert(subtotal);
+			}
+			
+		};
+			
+		//计算算量
+		function totalNumber(){
+			var count_len=$(".count_inp");	
+			var num=0;		
+			for (var i = 0; i <count_len.length; i++ ){
+				
+				var count_int=parseInt($(count_len[i]).val());
+				if(count_int<0){
+					count_int=0;
+				}
+				else if($(count_len[i]).val()==""){
+					count_int=0;
+					//alert("为空");
+				}
+				num=parseInt(num)+count_int;
+				
+			}
+			$("#selectedTotal").html(num);
+		};
+		
+		//计算总价格
+		function totalMoney(){
+			var subtotal_len=$(".subtotal");
+			var num=0;
+			
+			for (var i = 0; i <subtotal_len.length; i++ ){
+				//num=parseInt(num)+parseInt(count_len[i].val())
+				//alert($(count_len[i]).val());
+				var totalM=parseInt($(subtotal_len[i]).text());
+				if(totalM<0){
+					totalM=0;
+				}
+				else if($(subtotal_len[i]).text()==""){
+					totalM=0;
+					//alert("为空");
+				}
+				num=parseInt(num)+parseInt(totalM);
+			}
+			$("#priceTotal").html(num);
+		};
+		
+	});
+	
+ 
+ 
+    </script> 
+        
+</head>
+<body> 
+	<div class="sle_box">
+         
+        <div class="tab_switch" style="display: block;">
+			<!-- 查询填写框 -->
+            <div class="sle_content">
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+
+            </div>
+            <!-- 表单 -->
+        	<div class="table_box">
+            	<form action="" method="get">
+                <table class="info_tab" id="cartTable"  cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th width="4%" scope="col"><input type="checkbox" value="全选" id="check_all" class="check-all check" onClick="selectAll(this)"></th>
+                            <th width="4%" scope="col">ID</th>
+                            <th width="19%" scope="col">商品编号</th>
+                            <th width="26%" scope="col">商品名称</th>
+                            <th width="9%" scope="col">商品单价</th>
+                            <th width="15%" scope="col">商品数量</th>
+                            <th width="23%" scope="col">合计</th>
+                        </tr>
+                    </thead>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox2"></td>
+                        <td class="order_num">1</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId" ></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                        <td><input class="count_inp" type="number"  min="0" value="0" /></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox3"></td>
+                        <td class="order_num">4</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                        <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox4"></td>
+                        <td class="order_num">5</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                        <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox5"></td>
+                        <td class="order_num">6</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">5</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">6</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price">0</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">7</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">0</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">2</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">9</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">1</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">10</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">3</td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><input class="count_inp" type="number" min="0" value="0"/></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <thead class="total_tr">
+                        <tr>
+                        	<th colspan="5" scope="col">总合计</th>
+                            <th width="15%" scope="col"><span id="selectedTotal"></span></th>
+                            <th width="23%" scope="col"><span id="priceTotal">1440</span></th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- 提交按钮 -->
+                <div class="btn_box textr">
+                        <button value="add" class="btn">保存</button>
+                        <button value="add" type="reset" class="btn_bule">重置</button>
+                        <button value="删除" class="btn_bule" id="del_tr"  onclick="del_tableTr()">删除</button>  
+                        <button value="add" class="btn_bule" onClick="paixu_id()">取消</button>
+                </div>
+                </form>
+            </div>
+        </div>
+         
+    </div>
+</body>
+</html>

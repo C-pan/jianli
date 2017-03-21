@@ -1,0 +1,171 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查询表页面</title>
+    
+ 
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css" >
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+   
+    
+ 
+ 
+    </script> 
+        
+</head>
+<body> 
+	<div class="sle_box">
+         
+        <div class="tab_switch" style="display: block;">
+			<!-- 查询填写框 -->
+            <div class="sle_content">
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" type="text" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" type="text" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" type="text" class="inp_disable2" disabled="disabled"> </span> 
+
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" type="text" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" type="text" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input placeholder="根据订单编号查询" type="text" class="inp_disable2" disabled="disabled"> </span> 
+
+            </div>
+            <!-- 表单 -->
+        	<div class="table_box">
+                <form action="">
+                <table class="info_tab" id="cartTable"  cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th width="4%" scope="col"><input type="checkbox" value="全选" id="check_all" class="check-all check" onClick="selectAll(this)"></th>
+                            <th width="4%" scope="col">ID</th>
+                            <th width="19%" scope="col">商品编号</th>
+                            <th width="26%" scope="col">商品名称</th>
+                            <th width="9%" scope="col">商品单价</th>
+                            <th width="15%" scope="col">商品数量</th>
+                            <th width="23%" scope="col">合计</th>
+                        </tr>
+                    </thead>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox2"></td>
+                        <td class="order_num">1</td>
+                        <td><input placeholder="根据订单编号查询" name="order_id" class="inp_orderId" ></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                        <td><input class="count_inp" type="text"  min="1" value="0" /></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox3"></td>
+                        <td class="order_num">4</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                        <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox4"></td>
+                        <td class="order_num">5</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                        <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox5"></td>
+                        <td class="order_num">6</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">5</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">6</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price">0</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">7</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">0</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">0</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">2</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">9</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">1</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">10</td>
+                        <td><input placeholder="根据订单编号查询" class="inp_orderId"></td>
+                        <td>&nbsp;</td>
+                        <td class="price">3</td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal">&nbsp;</td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><input type="text" name="num" class="count_inp" value="0"/></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <thead class="total_tr">
+                        <tr>
+                            <th colspan="5" scope="col">总合计</th>
+                            <th width="15%" scope="col"><span id="selectedTotal"></span></th>
+                            <th width="23%" scope="col"><span id="priceTotal">1440</span></th>
+                        </tr>
+                    </thead>
+                </table>
+                </form>
+                <!-- 提交按钮 -->
+                <div class="btn_box textr">
+                        <button value="add" class="btn">保存</button>
+                        <button value="add" type="reset" class="btn_bule">重置</button>
+                        <button value="删除" class="btn_bule" id="del_tr"  onclick="del_tableTr()">删除</button>  
+                        <button value="add" class="btn_bule">取消</button>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+</body>
+</html>

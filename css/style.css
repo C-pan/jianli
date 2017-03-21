@@ -1,0 +1,558 @@
+/* LESS Document */
+/*共用类*/
+.transition_0.5s {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.transform360 {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.transform0 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.transformscale1.05 {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.end_bottom {
+  padding-bottom: 2rem;
+}
+.hr_50 {
+  height: 4rem;
+}
+html {
+  font-size: 62.5%;
+  color: #2c3e50;
+}
+.footer {
+  background: #2c3e50;
+  color: #ddd;
+  padding: 30px 0 25px 0;
+}
+.resumenav {
+  background-color: rgba(44, 62, 80, 0.9);
+  z-index: 150;
+  position: fixed;
+  width: 100%;
+}
+.myNav_list {
+  position: relative;
+  text-align: center;
+  height: 4rem;
+  margin: 0 auto;
+  width: 55%;
+  overflow: hidden;
+}
+.myNav_list li a {
+  width: 20%;
+  float: left;
+  color: #fff;
+  font: 1.6rem/4rem "微软雅黑";
+  height: 4rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.myNav_list li a:hover {
+  font-size: 1.7rem;
+  color: #fff;
+  background: #12c5a1;
+}
+@media (max-width: 768px) {
+  .myNav_list {
+    height: 3.5rem;
+    width: 80%;
+  }
+  .myNav_list li a {
+    font-size: 1.4rem;
+    width: 20%;
+    height: 3.5rem;
+  }
+  .myNav_list li a:hover {
+    font-size: 1.5rem;
+    height: 3.5rem;
+  }
+  .home_tit h2 {
+    font-size: 30px;
+  }
+}
+.navbar_list {
+  position: relative;
+  text-align: center;
+}
+.navbar_list li：hover {
+  background: #12c5a1;
+}
+.navbar-toggle .icon-bar {
+  background: #FFF;
+}
+.navbar_list li a {
+  font-size: 1.6rem;
+  color: #fff;
+  font-family: "微软雅黑";
+}
+.navbar_list li a:hover {
+  font-size: 1.6rem;
+  color: #fff;
+  background: #12c5a1;
+}
+.myLogo {
+  font-size: 2rem;
+  color: #fff;
+  font-family: "微软雅黑";
+  cursor: pointer;
+}
+.myLogo:hover {
+  color: #fff;
+  font-family: "微软雅黑";
+  text-decoration: none;
+}
+.angle_dow {
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  top: 640px;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  display: block;
+  margin-left: 49%;
+  cursor: pointer;
+  animation: mydow 5s;
+  -moz-animation: mydow 5s;
+  /* Firefox */
+  -webkit-animation: mydow 5s;
+  /* Safari and Chrome */
+  -o-animation: mydow 5s;
+  /* Opera */
+}
+@keyframes mydow {
+  0% {
+    top: 150px;
+  }
+  20% {
+    top: 640px;
+  }
+  40% {
+    top: 630px;
+  }
+  60% {
+    top: 640px;
+  }
+  80% {
+    top: 630px;
+  }
+  100% {
+    top: 640px;
+  }
+}
+.gohome {
+  cursor: pointer;
+  font-size: 2rem;
+}
+.gotop {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  position: fixed;
+  top: 80%;
+  right: 1%;
+  color: #12c5a1;
+  cursor: pointer;
+  background: rgba(44, 62, 88, 0.2);
+  text-align: center;
+  line-height: 4rem;
+  padding-left: 5px;
+  display: none;
+}
+.angle_up {
+  position: relative;
+  text-align: center;
+  font-size: 4rem;
+  color: #12c5a1;
+  cursor: pointer;
+  display: block;
+}
+.homeBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 88, 0.4);
+}
+#home {
+  padding: 50px 0;
+  height: 700px;
+  background: url(../img/header_bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+  padding-bottom: 200px;
+  padding-bottom: 2rem;
+  position: relative;
+}
+#about {
+  padding: 50px 0;
+  height: auto;
+  color: #fff;
+  background-color: #fff;
+  color: #2c3e50;
+  border-bottom: 1px solid #CCC;
+}
+#experience {
+  padding: 50px 0;
+  height: auto;
+  background: url(../img/skills-bg.jpg) center center no-repeat;
+  padding-bottom: 200px;
+  padding-bottom: 2rem;
+}
+#skills {
+  padding: 50px 0;
+  height: auto;
+  background: url(../img/services-bg.jpg) center center no-repeat;
+  padding-bottom: 2rem;
+}
+.other_skills {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+.other_skills h3 {
+  color: #12c5a1;
+  font-weight: bold;
+}
+.other_skills strong {
+  background: #2c3e50;
+  color: #fff;
+  border: 0;
+  margin: 3.3rem 1.6rem 0.6rem 0;
+}
+.other_skills strong:hover {
+  background: #12c5a1;
+}
+#project {
+  padding: 50px 0;
+  height: auto;
+  padding-bottom: 2rem;
+}
+#contact {
+  padding: 50px 0;
+  height: auto;
+  color: #FFF;
+  background: url(../img/contact-bg.jpg) no-repeat center top fixed;
+  padding-bottom: 2rem;
+}
+.nav_center {
+  margin-right: 32%;
+  margin-left: auto;
+}
+#contact .tit h2 {
+  color: #FFF;
+}
+.home_tit h2 {
+  font-size: 80px;
+  margin-bottom: 15px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Niconne', cursive;
+  font-weight: 400;
+  font-family: 'Rouge Script', cursive;
+  line-height: 90px;
+  color: #fff;
+  letter-spacing: 1px;
+  word-spacing: 6px;
+  text-shadow: -2px -2px #000000;
+  padding-top: 180px;
+}
+.home_tit p {
+  font-size: 27px;
+  margin-top: 60px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 56px;
+  word-spacing: 2px;
+  text-shadow: 2px 2px #1C2725;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.tit h2 {
+  text-transform: uppercase;
+  line-height: 20px;
+  font-size: 30px;
+  margin: 65px auto 30px auto;
+  color: #2c3e50;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  ursor: pointer;
+}
+.tit:hover h2 {
+  line-height: 25px;
+  font-size: 32px;
+}
+.tit_line {
+  height: 4px;
+  width: 5.5rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  border: 0;
+  background-color: #12c5a1;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.tit:hover .tit_line {
+  width: 7rem;
+}
+.myPortrait img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.myPortrait {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 4rem auto 0rem auto;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+.myPortrait:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.about_text {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto 4rem auto;
+  line-height: 22px;
+  font-size: 1rem;
+}
+.aboutme {
+  padding: 3rem;
+}
+.myHobby {
+  padding: 1rem;
+}
+.aboutme span,
+i {
+  padding-right: 0.6rem;
+}
+.experience_item {
+  border-bottom: 1px solid #CCC;
+  padding: 2rem 0;
+}
+.experience_item h3 {
+  padding: 0.6rem;
+  color: #12c5a1;
+  font-weight: bold;
+}
+.experience_item h4 {
+  font-family: "微软雅黑";
+  font-size: 1.7rem;
+}
+.experience_item h4,
+p {
+  padding: 1rem 0 0.5rem 0;
+}
+.container_item {
+  padding-top: 3rem;
+}
+.container_item h4 {
+  padding: 3rem 0;
+}
+.container_item .container_item:hover {
+  transform: scale(1.05);
+}
+.container_item #JavaScript,
+.container_item #JQuery,
+.container_item #JQueryM,
+.container_item #html,
+.container_item #Bootstrap,
+.container_item #Photoshop {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.container_item #JavaScript:hover,
+.container_item #JQuery:hover,
+.container_item #JQueryM:hover,
+.container_item #html:hover,
+.container_item #Bootstrap:hover,
+.container_item #Photoshop:hover {
+  transform: scale(1.1);
+  /*transform:rotate(360deg); */
+}
+.project_item {
+  overflow: hidden;
+  padding: 1.5rem 0.5rem;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0px;
+  position: relative;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.project_item img {
+  padding: 0.5rem;
+  border-radius: 8%;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.project_item>img {
+  padding: 0.5rem;
+  width: 100%;
+  height: 250px;
+  border-radius: 8%;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.project_item figcaption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 100px;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.project_item figcaption:hover {
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.project_item figcaption h4,
+.project_item figcaption p,
+.project_item figcaption a {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  top: 0%;
+  color: #fff;
+  display: none;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+  margin-bottom: 5%;
+  height: 0px;
+  width: 0px;
+}
+.project_item figcaption:hover h4 {
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  top: 30%;
+  color: #fff;
+  display: block;
+  height: auto;
+  width: auto;
+}
+.project_item figcaption:hover p,
+.project_item figcaption a {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  top: 35%;
+  color: #fff;
+  display: block;
+  height: auto;
+  width: auto;
+}
+.project_item:hover img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.container_row {
+  padding-top: 0rem;
+}
+.container_row span {
+  font-size: 4rem;
+  margin-top: 3rem;
+  padding: 3rem;
+}
+.container_row p {
+  padding: 3rem;
+}
+.container_row div {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.container_row div:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  transform: scale(1.2);
+}
+.container_row div:hover span {
+  transform: scale(1.3);
+}

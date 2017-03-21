@@ -1,0 +1,64 @@
+<html>
+<head>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/popwin.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+   
+		 $("#form1").submit(function(){
+    		var oUsername=$("#username").val();
+    		if(oUsername==""){
+    		 	// alert("用户名空值");
+                // showWin3("","","用户名空值!!");
+                event.preventDefault();
+                showWin2("","","提交成功!!");
+    			
+    		}else if($("#email").val()==""){
+    			alert("邮箱空值");
+                event.preventDefault();
+			}else{
+                showWin3("","","提交成功!!");
+                // popWin.showWin("600","500","弹出修改","popup01.html"); 
+                 
+                event.preventDefault();
+            }
+			 
+		});
+
+         
+             
+            function showWin3(aa,vv,cc){
+                alert(cc);
+            }
+        
+})
+//]]>
+</script>
+</head>
+
+<body>
+
+<form method="post"  id="form1"action="http://www.baidu.com">
+    <div class="int">
+        <label for="username">用户名:</label>
+        <!-- 为每个需要的元素添加required -->
+        <input type="text" id="username"  />
+    </div>
+    <div class="int">
+        <label for="email">邮箱:</label>
+        <input type="text" id="email"  />
+    </div>
+    <div class="int">
+        <label for="personinfo">个人资料:</label>
+        <input type="text" id="personinfo" />
+    </div>
+    <div class="sub">
+        <input type="submit" value="提交" id="send"/><input type="reset" id="res"/>
+    </div>
+</form>
+
+</body>
+
+</html>

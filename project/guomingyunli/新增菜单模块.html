@@ -1,0 +1,93 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>增加菜单模块</title>
+    <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="js/popwin.js"></script>
+
+</head>
+<body > 
+<div class="middle_top">                 
+        <a href="#">增加菜单模块</a> 
+</div>
+<div class="main_contert"> 
+    <div class="sle_box">
+        <form id="add_menu" action="11.php" method="post">        
+            <div class="showcen">
+                <h4 class="tet" >菜单编号：</h4>
+                <div class="inp_row">
+                    <span class="inp_height">
+                        <span class="label_text">菜单描述：</span>
+                        <input  type="text" class="inp_mandatory" id="inp_menuDes"> 
+                    </span> 
+                </div>
+                <div class="inp_row">
+                    <span class="inp_height">
+                        <span class="label_text">模块：</span>
+                        <input  type="text" class="inp_mandatory" id="inp_modular" > 
+                    </span> 
+                </div>
+                <div class="inp_row">   
+                    <span class="inp_height">
+                        <span class="label_text">控制器：</span>
+                        <input  type="text" class="inp_mandatory" id="inp_controller" > 
+                    </span> 
+                </div>
+                <div class="inp_row">
+                    <span class="inp_height">
+                        <span class="label_text">方法：</span>
+                        <input type="text" class="inp_mandatory" id="inp_methods"> 
+                    </span> 
+                </div>
+                <div class="inp_row">
+                    <span class="inp_height">
+                        <span class="label_text"> 层级：</span>
+                        <input  type="text" class="inp_mandatory" id="inp_hierarchy" > 
+                    </span> 
+                </div>
+            </div> 
+            <div class="btn_box textr">
+                <input type="submit" name="" class="btn_bule"  value="保存">
+                <a href="#" class="btn_bule">取消</a>
+            </div>  
+        </form>
+    </div>
+</div>
+</body>
+<script>
+$(function(){
+        event.preventDefault();
+ 
+         $("#add_menu").submit(function(){
+            if($("#inp_menuDes").val()==""){
+                event.preventDefault();
+                validateTips("","","菜单描述不得为空!!");
+
+            }
+            else if($("#inp_modular").val()==""){
+                event.preventDefault();
+                validateTips("","","模块不得为空!!");
+            }
+            else if($("#inp_controller").val()==""){
+                event.preventDefault();
+                validateTips("","","控制器不得为空!!");
+            }
+            else if($("#inp_methods").val()==""){
+                event.preventDefault();
+                validateTips("","","方法不得为空!!");
+            }
+            else if($("#inp_hierarchy").val()==""){
+                event.preventDefault();
+                validateTips("","","层级不得为空!!");
+            }
+            else{
+                validateTips("","","提交成功!!");
+            }
+        });
+});
+</script>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查询表页面</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css" >
+    <link type="text/css" rel="stylesheet" href="css/demo.css" >
+    <link type="text/css" rel="stylesheet" href="css/zTreeStyle.css" >
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/laydate/laydate.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+	<script type="text/javascript" src="js/tree.js"></script>
+</head>
+
+<body> 
+<div class="middle_top">                 
+		<a href="#">查询表页面</a> 
+</div>
+<div class="main_contert"> 
+
+
+	<div class="sle_box">
+        <div class="tab_switch" style="display: block;">
+			<!-- 查询填写框 -->
+            <div class="sle_content">
+            <form>
+                <div class="row_input">
+	                <span class="inp_height"><span class="label_text">订单编号:</span><input type="text" name="DI" placeholder="根据订单编号查询" class="inp"> </span> 
+	                <span class="inp_height"><span class="label_text">订单编号:</span><input type="text" name="DI" placeholder="根据订单编号查询" class="inp"> </span>                    
+	                <span class="inp_height"><span class="label_text">订单编号:</span><input type="text" name="DI" placeholder="根据订单编号查询" class="inp"> </span> 
+	            </div>
+				<div class="row_input">
+                    <span class="inp_height"><span class="label_text">开始时间:</span><input type="text" name="startDate" placeholder="根据订单编号查询" class="inp inp_calendar" onClick="laydate()"></span>
+                    <span class="inp_height"><span class="label_text">结束时间:</span><input type="text" name="endDate" placeholder="根据订单编号查询" class="inp inp_calendar" onClick="laydate()"></span>    
+                </div>
+				<div class="row_input">
+					<span class="inp_height">
+						<span class="label_text">车辆类型:</span><select class="select_bg" >
+                        	<option>车辆类型</option>
+                            <option>132123</option>
+                            <option>132123</option>
+                        </select>
+                   	</span>
+                	<span class="inp_height">
+						<span class="label_text">车辆状态:</span><select class="select_bg">
+                        	<option>132123</option>
+                            <option>132123</option>
+                            <option>132123</option>
+                        </select>
+					</span>   
+
+                    <!-- 部门tree input现在框 -->
+                    <span class="inp_height">
+                        <span class="label_text">部门tree:</span><input id="citySel" class="inp" type="text" name="tree" readonly value="" placeholder="tree下拉选择框" onClick="showMenu();" /> 
+                        <div id="menuContent" class="menuContent" style="display:none; position: absolute; z-index: 10000;">
+                            <ul id="treeDemo" class="ztree" style="margin-top:0; width:220px; height: 300px;"></ul>
+                        </div>
+                    </span>   
+                    <!-- 结束 部门tree   -->
+				</div>
+				<div class="row_input">
+					<span class="inp_height">
+						<span class="label_text">所属门店:</span><select class="select_bg">
+                        	<option>132123</option>
+                            <option>132123</option>
+                            <option>132123</option>
+                        </select>
+						<select class="select_bg">
+                        	<option>132123</option>
+                            <option>132123</option>
+                            <option>132123</option>
+                        </select>
+						<select class="select_bg">
+                        	<option>132123</option>
+                            <option>132123</option>
+                            <option>132123</option>
+                        </select>
+					</span>                    
+				</div>
+                <div class="btn_box textr">
+                    <input type="reset" name="reset" class="btn_bule" id="reset" value="重置">
+                    <input type="button" name="btn_sel" class="btn" value="提交">
+                </div>
+            </form>    
+            </div>
+            <!-- 表单 -->
+        	<div class="table_box">
+                <table class="info_tab" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th width="3%" scope="col">序号</th>
+                            <th width="4%" scope="col"><input type="checkbox" value="全选" id="check_all" onClick="selectAll(this)"></th>
+                            <th width="8%" scope="col">ID</th>
+                            <th width="20%" scope="col">订单编号</th>
+                            <th width="7%" scope="col">用户名</th>
+                            <th width="11%" scope="col">用户手机号码</th>
+                            <th width="29%" scope="col">用户地址</th>
+                            <th width="7%" scope="col">司机姓名</th>
+                            <th width="11%" scope="col">司机编号</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                      <td><input type="checkbox" name="checkbox" class="checked" id="checkbox2"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox3"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox4"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox5"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox7"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox8"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox9"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox10"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox10"></td>
+                        <td>171315</td>
+                        <td>20151013140333069233778</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>广东省深圳市南山区朗山二号路口运...</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                </table>
+                <div class="clearfix page_box">
+					<ul id="PageNum" class="fr">
+	 					<li><a href="#" class="next_page">上一页</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li  class="on"><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<span>...</span>
+						<li><a href="#">11</a></li>
+						<li><a href="#">上一页</a></li>
+						<span >共11页  到第<input type="text" class="page_input">页</span>
+						<li><a href="#" class="on">GO</a></li>
+					</ul>
+                </div>
+                <!-- 提交按钮 -->
+                <div class="btn_box fr">
+                    <button value="add" class="btn">新增</button>
+                    <button value="add" class="btn">修改</button>
+                    <button value="add" class="btn">查看</button>
+                    <button value="删除" class="btn_bule" id="del_tr"  onclick="del_tableTr()">删除</button>  
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    
+
+</div>
+</body>
+</html>

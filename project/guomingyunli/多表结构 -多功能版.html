@@ -1,0 +1,419 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查询表页面</title>
+    
+    <script type="text/javascript" src="js/tree.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/jedate.js"></script>
+    <!-- 部门tree -->
+    <link rel="stylesheet" href="css/demo.css" type="text/css">
+    <link rel="stylesheet" href="css/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+    <!-- 结算js  -->
+ 
+     
+    <script>
+	$(function(){
+		//                   取消 重置 保存
+		totalNumber();
+		subtotal();
+		totalMoney();
+		
+		$(".count_inp").live('focus',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$(".count_inp").live('blur',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$(".count_inp").live('keydown',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		
+		$(".count_inp").live('keypress',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$(".count_inp").live('keyup',function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		$("#del_tr").click(function(){
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		//新增订单  .total_tr #create_order
+		$("#create_order").live('click',function(){
+			/*给列的序号赋值
+			var tr=$(".cart_row");
+			tr.children(".order_num").html(tr.length);
+			*/
+			var creatr_tr="<tr class='cart_row'>"+$("#copy_tr").html()+"</tr>";
+			$("#cartTable").append(creatr_tr);
+				
+		});
+		
+		//加减 计算
+		$(".reduce").live('click',function(){
+			var num=$(this).next().val();
+			if(num<=1){ return}
+			$(this).next().val(num-1);
+			//alert($("#selectedTotal").html());	
+			totalNumber();
+			subtotal();
+			totalMoney();			
+		});
+		$(".add").live('click',function(){
+			var n=$(this).prev().val();
+			var num=parseInt(n)+1;
+			if(num==0){ return;}
+			$(this).prev().val(num);				
+			totalNumber();
+			subtotal();
+			totalMoney();	
+		});
+		
+		//行内价格 .subtotal 单价 .price  tr:.cart_row   输入框 .count_inp
+		function subtotal(){
+			var tr=$(".cart_row");
+			for(var i=0;i<tr.length;i++){
+				var num=$(tr[i]).children("td").eq(5).children(".count_inp").val();//数量
+				var price=$(tr[i]).children(".price").html(); //价格
+				//alert($(tr[i]).children("td").eq(5).children(".count_inp").val());//价格
+				$(tr[i]).children(".subtotal").html(num*price);//行内总结
+				//alert(subtotal);
+			}
+			
+		};
+		
+		//计算算量
+		function totalNumber(){
+			var count_len=$(".count_inp");
+			var num=0;
+			
+			for (var i = 0; i <count_len.length; i++ ){
+				//num=parseInt(num)+parseInt(count_len[i].val())
+				//alert($(count_len[i]).val());
+				var count_int=parseInt($(count_len[i]).val());
+				if(count_int<0){
+					count_int=0;
+				}
+				else if($(count_len[i]).val()==""){
+					count_int=0;
+				}
+				num=parseInt(num)+count_int;
+				
+			}
+			$("#selectedTotal").html(num);
+		};
+	
+		function totalMoney(){
+			var subtotal_len=$(".subtotal");
+			var num=0;
+			
+			for (var i = 0; i <subtotal_len.length; i++ ){
+				//num=parseInt(num)+parseInt(count_len[i].val())
+				//alert($(count_len[i]).val());
+				
+				num=parseInt(num)+parseInt($(subtotal_len[i]).text());
+				 
+			}
+			$("#priceTotal").html(num);
+		};
+		
+	});
+	
+ 
+ 
+    </script> 
+        
+</head>
+<body> 
+	<div class="sle_box">
+         
+        <div class="tab_switch" style="display: block;">
+			<!-- 查询填写框 -->
+            <div class="sle_content">
+                <span class="inp_height"><span class="label_text">订单编号:</span><input value="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input value="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input value="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+
+                <span class="inp_height"><span class="label_text">订单编号:</span><input value="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input value="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+                <span class="inp_height"><span class="label_text">订单编号:</span><input value="根据订单编号查询" class="inp_disable2" disabled="disabled"> </span> 
+
+            </div>
+            <!-- 表单 -->
+        	<div class="table_box">
+                <table class="info_tab" id="cartTable"  cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th width="3%" scope="col"><input type="checkbox" value="全选" id="check_all" class="check-all check" onClick="selectAll(this)"></th>
+                            <th width="9%" scope="col">ID</th>
+                            <th width="20%" scope="col">商品编号</th>
+                            <th width="19%" scope="col">商品名称</th>
+                            <th width="9%" scope="col">商品单价</th>
+                            <th width="20%" scope="col">商品数量</th>
+                            <th width="16%" scope="col">合计</th>
+                        </tr>
+                    </thead>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox2"></td>
+                        <td class="order_num">1</td>
+                        <td><input value="根据订单编号查询" class="inp_orderId" ></td>
+                        <td>一次性笔</td>
+                        <td class="price">10</td>
+                        <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="10"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal">360</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox3"></td>
+                        <td class="order_num">2</td>
+                        <td><input value="根据订单编号查询" class="inp_orderId"></td>
+                        <td>一次性笔</td>
+                        <td class="price">10</td>
+                        <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="12"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal">360</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox4"></td>
+                        <td class="order_num">3</td>
+                        <td><input value="根据订单编号查询" class="inp_orderId"></td>
+                        <td>一次性笔</td>
+                        <td class="price">10</td>
+                        <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="13"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal">360</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox5"></td>
+                        <td class="order_num">4</td>
+                        <td><input value="根据订单编号查询" class="inp_orderId"></td>
+                        <td>一次性笔</td>
+                        <td class="price">10</td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="40"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal">360</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">5</td>
+                        <td><input value="根据订单编号查询" class="inp_orderId"></td>
+                        <td>一次性笔</td>
+                        <td class="price">10</td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="15"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal">360</td>
+                    </tr>
+                    <tr class="cart_row">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num">5</td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="0"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="0"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="0"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="0"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="0"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <tr class="cart_row hide" id="copy_tr">
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="order_num"></td>
+                        <td><input value="" class="inp_orderId"></td>
+                        <td></td>
+                        <td class="price"></td>
+                         <td><span class="reduce"><img src="images/ico/reduce_ico.png" alt="reduce"/></span><input class="count_inp" type="number" min="1" value="0"/><span class="add"><img src="images/ico/add_ico.png" alt="add"/></span></td>
+                        <td class="subtotal"></td>
+                    </tr>
+                    <thead class="total_tr">
+                        <tr>
+                        	<th colspan="5" scope="col">总合计</th>
+                            <th width="20%" scope="col"><span id="selectedTotal">10</span></th>
+                            <th width="16%" scope="col"><span id="priceTotal">1440</span></th>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- 提交按钮 -->
+          <div class="btn_box clearfix">
+              		<span class="fl" style="margin-left:20px;">
+                    	<button value="add" class="btn" id="create_order" >新增</button>
+                    	<button value="删除" class="btn_bule" id="del_tr"  onclick="del_tableTr()">删除</button>  
+                    </span>
+                    <span class="fr">
+                        <button value="add" class="btn">保存</button>
+                        <button value="add" class="btn_bule">清空</button>
+                        <button value="add" class="btn_bule">取消</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+</body>
+<script type="text/javascript">
+    
+    var start = {
+    	dateCell:"#inpstart",
+	    format: 'YYYY-MM-DD hh:mm:ss',
+	    minDate: $.nowDate(0), //设定最小日期为当前日期
+	    isinitVal:true,
+	    festival:true,
+	    isinitVal:false,
+	    maxDate: '2099-06-30 23:59:59', //最大日期
+	    choosefun: function(elem,datas){
+	        end.minDate = datas; //开始日选好后，重置结束日的最小日期
+	    }
+	};
+	var end = {
+		dateCell:"#inpend",
+	    format: 'YYYY年MM月DD日 hh:mm:ss',
+	    minDate: $.nowDate(0), //设定最小日期为当前日期
+	    festival:true,
+	    maxDate: '2099-06-16 23:59:59', //最大日期
+	    choosefun: function(elem,datas){
+	        start.maxDate = datas; //将结束日的初始值设定为开始日的最大日期
+	    }
+	};
+	$('#inpstart').jeDate(start);
+	$('#inpend').jeDate(end);
+</script>
+<SCRIPT type="text/javascript">
+        <!--
+        var setting = {
+            check: {
+                enable: true,
+                chkStyle: "radio",
+                radioType: "all"
+            },
+            view: {
+                dblClickExpand: false
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onClick: onClick,
+                onCheck: onCheck
+            }
+        };
+        var zNodes =[
+            { id:1, pId:0, name:"1级子目录 1", open:false},
+            { id:11, pId:1, name:"2级子目录 11", attr:"id11"},
+            { id:111, pId:11, name:"3级子目录 111", attr:"id111"},
+            { id:112, pId:11, name:"3级子目录 112", attr:"id112"},
+            { id:113, pId:11, name:"3级子目录 112", attr:"id113"},
+            { id:12, pId:1, name:"2级子目录 12", attr:"id12"},
+
+
+
+             { id:2, pId:0, name:"1级子目录 2", open:false},
+            { id:21, pId:2, name:"2级子目录 21", attr:"id11"},
+            { id:211, pId:21, name:"3级子目录 211", attr:"id211"},
+            { id:212, pId:21, name:"3级子目录 212", attr:"id212"},
+            { id:213, pId:21, name:"3级子目录 212", attr:"id213"},
+            { id:22, pId:2, name:"2级子目录 22", attr:"id11"},
+            { id:221, pId:22, name:"3级子目录 211", attr:"id211"},
+            { id:222, pId:22, name:"3级子目录 212", attr:"id212"},
+            { id:223, pId:22, name:"3级子目录 212", attr:"id213"},
+
+
+            { id:3, pId:0, name:"1级子目录 3", attr:"id3"},
+            { id:31, pId:3, name:"2级子目录 21", open:true, attr:"id31"},
+
+            { id:4, pId:0, name:"1级子目录 4", attr:"id4"},
+            { id:41, pId:4, name:"2级子目录 21", open:true, attr:"id41"}
+        ];
+
+
+
+
+        function onClick(e, treeId, treeNode) {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            zTree.checkNode(treeNode, !treeNode.checked, null, true);
+            return false;
+        }
+
+        function onCheck(e, treeId, treeNode) {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+            nodes = zTree.getCheckedNodes(true),
+            v = "";
+            for (var i=0, l=nodes.length; i<l; i++) {
+                v += nodes[i].name + ",";
+            }
+            if (v.length > 0 ) v = v.substring(0, v.length-1);
+            var cityObj = $("#citySel");
+            cityObj.attr("value", v);
+        }
+
+        function showMenu() {
+            var cityObj = $("#citySel");
+            var cityOffset = $("#citySel").offset();
+            $("#menuContent").css({left:cityOffset.left + "px", top:cityOffset.top + cityObj.outerHeight() + "px"}).slideDown("fast");
+
+            $("body").bind("mousedown", onBodyDown);
+        }
+        function hideMenu() {
+            $("#menuContent").fadeOut("fast");
+            $("body").unbind("mousedown", onBodyDown);
+        }
+        function onBodyDown(event) {
+            if (!(event.target.id == "menuBtn" || event.target.id == "citySel" || event.target.id == "menuContent" || $(event.target).parents("#menuContent").length>0)) {
+                hideMenu();
+            }
+        }
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        });
+        //-->
+    </SCRIPT>
+</html>

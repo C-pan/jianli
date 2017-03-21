@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+ <script>
+  function del_tableTr(){
+      var oCheckbox=document.getElementsByName("checkbox");
+      for(var i=oCheckbox.length-1; i>=0;i--){
+         if(oCheckbox[i].checked==true){
+             //获取td节点
+             var td=oCheckbox[i].parentNode;
+            //获取tr节点
+            var tr=td.parentNode;
+            //获取table
+            var table=tr.parentNode;
+            //移除子节点
+            table.removeChild(tr);
+          }  
+      }
+  };
+   function update(){
+      var oCheckbox=document.getElementsByName("checkbox");
+      for(var i=oCheckbox.length-1; i>=0;i--){
+         if(oCheckbox[i].checked==true){
+            var odd=$(".roleid").eq(i).html();
+			
+          }  
+      }
+	  alert(odd);
+  };
+ </script>
+
+ 
+</head>
+
+<body style="padding: 10px;">
+<div style="fon-sizet:60px; text-align:center;">
+   <table class="info_tab" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th width="3%" scope="col">序号</th>
+                            <th width="4%" scope="col"><input type="checkbox" value="全选" id="check_all" onClick="selectAll(this)"></th>
+                            <th width="8%" scope="col">ID</th>
+                            <th width="7%" scope="col">用户名</th>
+                            <th width="11%" scope="col">用户手机号码</th>
+                            <th width="7%" scope="col">司机姓名</th>
+                            <th width="11%" scope="col">司机编号</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                      <td><input type="checkbox" name="checkbox" class="checked" id="checkbox2"></td>
+                        <td class="roleid">11</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox3"></td>
+                        <td class="roleid">12</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox4"></td>
+                        <td class="roleid">13</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox5"></td>
+                        <td class="roleid">14</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox6"></td>
+                        <td class="roleid">15</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox7"></td>
+                        <td class="roleid">16</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox8"></td>
+                        <td class="roleid">17</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox9"></td>
+                        <td class="roleid">18</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox10"></td>
+                        <td class="roleid">19</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><input type="checkbox" name="checkbox" class="checked" id="checkbox10"></td>
+                        <td class="roleid">20</td>
+                        <td>运创租赁</td>
+                        <td>18088888888</td>
+                        <td>张三</td>
+                        <td>138</td>
+                    </tr>
+                </table>
+                <div class="btn_box fr">
+                    <button value="add" class="btn">新增</button>
+                    <button value="add" class="btn" onclick="update()">修改</button>
+                    <button value="add" class="btn">查看</button>
+                    <button value="删除" class="btn_bule" id="del_tr"  onclick="del_tableTr()">删除</button>  
+                </div>
+</div>
+</body>
+</html>

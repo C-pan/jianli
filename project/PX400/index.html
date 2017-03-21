@@ -1,0 +1,247 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+    function getRTime(){
+        var EndTime= new Date('2016/12/16 21:00:10'); 
+        var NowTime = new Date();
+        var t =EndTime.getTime() - NowTime.getTime();
+        /*var d=Math.floor(t/1000/60/60/24);
+        t-=d*(1000*60*60*24);
+        var h=Math.floor(t/1000/60/60);
+        t-=h*60*60*1000;
+        var m=Math.floor(t/1000/60);
+        t-=m*60*1000;
+        var s=Math.floor(t/1000);*/
+
+        var d=Math.floor(t/1000/60/60/24);
+        var h=Math.floor(t/1000/60/60%24);
+        var m=Math.floor(t/1000/60%60);
+        var s=Math.floor(t/1000%60);
+		if(d<10)
+		{ 
+			d='0'+d;
+		} 
+		if(h<10)
+		{ 
+			h='0'+h;
+		} 
+		if(m<10)
+		{ 
+			m='0'+m;
+		} 
+		if(s<10)
+		{ 
+			s='0'+s;
+		} 
+	if(EndTime<NowTime)
+	{
+	    d='00';
+	    h='00';
+	    m='00';
+	    s='00';
+	}
+        document.getElementById("t_d").innerHTML = d;
+        document.getElementById("t_h").innerHTML = h;
+        document.getElementById("t_m").innerHTML = m;
+        document.getElementById("t_s").innerHTML = s;
+    }
+    setInterval(getRTime,1000);
+    </script>
+
+<style>
+
+<!--
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {    
+    margin:0;   
+    padding:0; font-family: Arial, sans-serif;
+	font-size:12px;
+} 
+
+h1,h2,h3,h4,h5,h6 { vertical-align:middle; padding:5px;}
+h3{	font-size:16px;}
+.italic{font-style:italic; margin-top:8px;}
+div,img{ margin:0px; padding:0px; border:0px;}
+body{ background-color:#e8f7ff; margin:0px; padding:0px;}
+
+
+
+#head { height:27px; padding-bottom:10px; background-color:#ececec  }
+#head .head_logo{ width:1002px; margin:0 auto;}
+#head .head_logo .logo { float:left; padding-right:50px}
+#head .head_logo .daohang ul{ list-style:none;  }
+#head .head_logo .daohang ul li { display:block; float:left; padding-right:15px; font-size:12px; padding-top:15px }
+a:hover { text-decoration:none; color:#000}
+a:visited { text-decoration:none; color:#000}
+a:link { text-decoration:none; color:#000}
+a img {
+	border:0;
+}
+
+
+.top{position:relative; width:100%; height:719px; margin:0px; padding:0px; background: transparent url("images/banner.jpg") no-repeat scroll center center;}
+.top img{width:100%; border:0px; margin:0px; padding:0px;}
+.topbanner{width:1002px; margin:0 auto;}
+
+
+#clock{ margin:0px auto; width:700px; height:110px;  padding-top:480px;}
+.box{ width:145px; height:103px; padding:0px; display:inline-block; margin:0px 0px 0px 20px; }	
+.numb{font-family: "DIN-Alternate-Bold"; color:#000000; font-size:85px; line-height:103px; letter-spacing:40px; padding-left:15px;  }
+
+
+.wrap{ width:100%; margin:0px auto; margin-top:0px;background: transparent url("images/bg.png") repeat-y scroll center center;}
+.mainContent{width:1002px; margin:0 auto; position:relative;}
+.includes{ background-color:#FFF;  height:400px;  padding:20px;border:3px solid #06C; -moz-border-radius:20px; -webkit-border-radius:20px; -o-border-radius:20px; -ms-border-radius:20px; border-radius:20px;}
+.rf{ height:478px; background-image:url(images/pic1.jpg); position:relative; }
+.fm{ height:580px; background-image:url(images/pic2.jpg);position:relative;}
+.fpv{ height:570px; background-image:url(images/pic3.jpg);position:relative;}
+.circle{ height:536px; background-image:url(images/pic4.jpg);position:relative;}
+.ofc{height:548px; background-image:url(images/pic5.jpg); background-color:#FFF;position:relative;}
+.cg{ height:400px;background-image:url(images/pic6.jpg);position:relative;}
+.rftext{ padding-left:480px; width:520px; padding-top:20px; position:absolute;} 
+.rftext h3 { display:inline-block;  line-height:50px;}
+.onekeytext{ padding-top:320px; padding-left:10px; width:720px; position:absolute;}
+.fmtext{padding-left:10px; padding-top:20px; width:600px; position:absolute;}
+.fpvtext{padding-left:340px; width:580px; padding-top:40px; position:absolute;}
+.circleText{padding-left:10px; width:460px; padding-top:10px; position:absolute;}
+.ofcText{padding-left:480px; width:460px; padding-top:40px; position:absolute;}
+.cgText{padding-left:530px; width:440px; padding-top:120px; position:absolute; }
+
+
+</style>
+</head>
+
+<body>
+	<!--
+	<div  class="top">		
+	<img src="images/top.jpg">  
+        <div  class="topbanner">	
+        	<img src="images/banner.png">
+        </div>	
+	</div>
+    -->
+    <div id="head">
+      <div class="head_logo">
+      <div class="logo"> <a href="http://www.hobbywow.com/"><img src="images/logo.png" /></a> 
+      </div>
+        <div class="daohang">
+          <ul>
+            <li><a href="http://www.hobbywow.com/en-rc-helicopters-sb15-pi1-c2175.htm
+    
+    ">RC Helicopters</a></li>
+            <li><a href="http://www.hobbywow.com/en-rc-quadcopters-sb15-pi1-c2933.htm">Multirotors</a></li>
+          <li><a href="http://www.hobbywow.com/en-fpv-series-sb15-pi1-c2934.htm">FPV Series</a></li>
+          <li><a href="http://www.hobbywow.com/en-free-shipping-sb15-pi1-c2648.htm">Free Shipping</a></li>
+          </ul>   
+        </div>
+      </div>
+    </div>
+    
+    <div  class="top">	
+		<div class="Countdown">
+        	<div id="clock">
+            <div class="box"><span class="numb" id="t_d">00<span></div>
+            <div class="box"><span class="numb" id="t_h">00<span></div>
+            <div class="box"><span class="numb" id="t_m">00<span></div>
+            <div class="box"><span class="numb" id="t_s">00<span></div>
+        	</div>
+        </div>
+	</div>
+<div class="wrap">
+    <div class="mainContent">
+    <p>&nbsp;</p>
+    	<div class="includes">
+        	<table width="962" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="500" rowspan="4"><img src="images/pic11.jpg"/></td>
+                    <td height="23" colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="34" colspan="2" bgcolor="#4598e4"><strong> 　FLYPRO PX400: World's First Auto-follow and FPV Drone</strong></td>
+                  </tr>
+                  <tr>
+                    <td width="272" rowspan="2">1 X PX400 Drone RC Quadcopter <br>
+                      1 X Walkera DEVO 10 + RX1002 <br>
+                      1 X P-3D Gimbal <br>
+                      1 X Image Transmitter <br>
+                      1 X DV701 Monitor (internal DVR) <br>
+                      1 X CNC Monitor <br>
+                      1 X mini b6ac Charger <br>
+                      1 X 5400MAH 6S Battery <br>
+                      1 X GOPRO 3 AV Cable <br>
+                      1 X TF Card Reader <br>
+                      2 X Digital Transmission Module <br>
+                    1 X Battery Alert <br>
+					<p>&nbsp;</p>
+                    <p><a href="http://hobbywow.com"><img src="images/b1.gif"/></a></p>
+                    </td>
+                    <td width="190" height="191">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/pic12.jpg"/></td>
+                  </tr>
+            </table>		
+        </div>
+    	<div class="rf italic">
+        	<div class="rftext">
+            <div><img src="images/pic13.png"/><h3>Routes Flights</h3></div>
+            <p>You can draw arbitrary curves, the drone will fly in the paths by itself, and autonomous landing on after finishing the flight, mainly used in large-area mapping and aerial photography. </p>
+            </div>
+            <div class="onekeytext">
+            <div><img src="images/pic14.png"/></div>
+            <h3>One-key Takeoff & Landing, Auto Return</h3>
+            <p>One Key to take off or land, takeoff and landing is easier than ever before, with both functions just a tap away. Tap once to takeoff and your PX400 will hover and transform, ready to start filming. Then tap again to make it transform into landing mode and auto land.</p>
+           
+            </div>
+        </div>
+        <div class="fm italic">
+        	<div class="fmtext">	
+            <div><img src="images/pic15.png"/></div>
+            <h3>FOLLOW ME</h3>
+            <p>It will follow you at a set distance and altitude, and keep its relative position from you. NO manual remote control required during flight, and the camera will keep aiming at you. </p>
+            </div>
+        </div>
+		<div class="fpv italic">
+        	<div class="fpvtext">
+            <h3>FPV</h3>
+            <p>Any video fans can improve your shooting skills by FPV to obtain a fine video job, this will make you a real video director, check what you can do with FPV </p>
+            </div>
+        </div>
+        <div class="circle italic">
+        	<div class="circleText">
+            <div><img src="images/pic16.png"/></div>
+            <h3>CIRCLE </h3>
+            <p>It makes circular rotations on a set radius and altitude, keeping the camera aimed at your target，even you can adjust the flight speed to spiral or downward spiral. </p>
+            </div>
+        </div>
+		<div class="ofc italic">
+        	<div class="ofcText">
+            <h3>Optical flow camera and sonar sensor</h3>
+            <P>Fly indoors and without GPS using vision positioning system</P>
+            </div>
+        </div>
+		<div class="cg italic">
+        	<div class="cgText">
+            <h3>Camera Gimbal </h3>
+            <P>Auto pitch and yaw </P>
+			<P>- the camera will always point at the smartphone; </P>
+			<P>- Horizon alignment (roll stabilization); </P>
+			<P>-Vibration isolation; </P>
+            <h3>13MP HD Camera （Built-in Image Transportation） </h3>
+
+            </div>
+            
+        </div>
+        <div class="pic">
+        	<img src="images/pic7.jpg"/>
+            <img src="images/pic8.jpg"/>
+            <img src="images/pic9.jpg"/>
+            <img src="images/pic10.jpg"/>
+        </div>
+        
+        </div>
+</div>
+</body>
+</html>

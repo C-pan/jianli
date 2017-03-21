@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+body{font-size:12px;}
+img{border:none;}
+li{list-style:none;}
+textarea{resize:none;}
+a{text-decoration:none; color:#656565;}
+body{font-family: "微软雅黑";font-size:14px;background:#fff; overflow:hidden;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+select,textarea,input{outline:none;border:none; background:none;}
+textarea:focus,input[type="text"]:focus,input[type="password"]:focus{ border:1px solid #8694ab;}
+ button:hover{   filter:alpha(opacity=80); -moz-opacity:0.8;  -webkit-opacity: 0.8;    opacity: 0.8;   }
+input[type="button"]:hover{ border: 0px; filter:alpha(opacity=80); -moz-opacity:0.8;  -webkit-opacity: 0.8;    opacity: 0.8;  }
+input[type="reset"]:hover{ border: 0px;  filter:alpha(opacity=80); -moz-opacity:0.8;  -webkit-opacity: 0.8;    opacity: 0.8; }
+/*很关键：将默认的select选择框样式清除*/
+select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+/*清浮动*/
+.clearfix:after{content:"";display:block;clear:both;}
+.clear{clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+.block, #block{display:block;}
+.hide, #hide{display:none;}
+.textl{text-align: left; }
+.textc{text-align: center; }
+.textr{text-align: right; }
+.hr10{ display: block; height: 10px; width: 100%; }
+.hr15{ display: block; height: 15px; width: 100%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

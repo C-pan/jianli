@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/stely.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery_min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript" src="js/ie6Fixpng.js"></script>
+<![endif]-->
+
+<title>6.购物车和结算页</title>
+
+</head>
+<body>
+    <div class="header">
+        <div class="topbar">
+        	<div class="comWidth">
+                <div class="leftArea Wish fl"><a href="#" class="collection">Wishlist(0)</a></div>
+                <div class="rightArea user_login fr">Welcome!&nbsp;<a href="#">Register</a>&nbsp;or&nbsp;<a href="#">Log in</a>&nbsp;Track My Order </div>
+            </div>
+        </div>
+        <div class="logoBar">
+        	<div class="comWidth">
+                <div class="logo  fl"><a href="#" class="logoImg"><img src="images/logo.png"></a></div>
+                <div class="searchBox fl">
+                     <input type="search" value="keyword" class="searchText fl"> 
+                     <input type="submit" value=""  class="searchBtn fl"> 
+                </div>
+                <div class="shopCar fl">
+                    <span class="shopText fl">Shopping Cart</span>
+                    <span class="shopNum fl">0</span>
+                    <div class="shopCar_ka">213131<img src="images/shop_car.jpg"></div>
+                </div>
+                
+            </div>
+        </div>
+        <!--导航条-->
+        <div class="navBar ">
+        	<div class="comWidth clearfix">
+            	<div class="shopClass clearfix fl">
+                	<h3>All Categories<i></i></h3>
+                </div> 
+                <ul class="navitems fl">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Free Shipping</a></li>
+                    <li><a href="#">EU Warehouse</a></li>
+                    <li><a href="#">Special Sale</a></li>
+                    <li class="voucher_nav"><a href="#">Get voucher here</a>
+                        <div class="voucher" >
+                        	<i class="arrow_d"></i>
+                            <span class="clearfix"><img src="images/vouch.jpg"></span>
+                        </div>
+                    </li>
+                </ul>
+        	 </div>
+        </div>
+    </div>  
+     <!--主内容区域-->
+     <div class="comWidth clearfix">
+     	<div class="shopping_item">
+        	<h3>Your shipping address</h3>
+            <div class="shopping_cont">
+            	<ul class="shopping_list">
+                    <li><span>First Name:</span><input type="text" value="123113"><i>*</i></li>
+                    <li><span>Last Name:</span><input type="text" value="123113"><i>*</i></li>
+                    <li><span>Address:</span><input type="text" value="123113"><i>*</i></li>
+                    <li><span>Address2:</span><input type="text" value="123113"> </li>
+                    <li><span>City:</span><input type="text" value="123113"><i>*</i></li>
+                	<li>
+                    	<span>Country/Region:</span>
+                        <select class="add_select">
+                            	<option value="223" selected="selected">United States</option>
+                                    <option value="222" >United Kingdom</option>
+                                    <option value="38" >Canada</option>
+                                    <option value="195" >Spain</option>
+                                    <option value="13" >Australia</option>
+                                    <option value="176" >Russian Federation</option>
+                                    <option value="73" >France</option>
+                                    <option value="30" >Brazil</option>
+                                    <option value="105" >Italy</option>
+                                    <option value="81" >Germany</option>
+                                    <option value="150" >Netherlands</option>
+                                    <option value="220" >Ukraine</option>
+                                    <option value="10" >Argentina</option>
+                                    <option value="99" >India</option>
+                                    <option value="103" >Ireland</option>
+                                    <option value="1" >Afghanistan</option>
+                                    <option value="2" >Albania</option>
+                                    <option value="3" >Algeria</option>
+                                    <option value="4" >American Samoa</option>
+                                    <option value="5" >Andorra</option>
+                                    <option value="6" >Angola</option>
+                                    <option value="7" >Anguilla</option>
+                                    <option value="8" >Antarctica</option>
+                                    <option value="9" >Antigua and Barbuda</option>
+                                    <option value="11" >Armenia</option>
+                                    <option value="12" >Aruba</option>
+                                    <option value="14" >Austria</option>
+                                    <option value="15" >Azerbaijan</option>
+                                    <option value="16" >Bahamas</option>
+                                    <option value="17" >Bahrain</option>
+                                    <option value="18" >Bangladesh</option>
+                                    <option value="19" >Barbados</option>
+                                    <option value="20" >Belarus</option>
+                                    <option value="21" >Belgium</option>
+                                    <option value="22" >Belize</option>
+                                    <option value="23" >Benin</option>
+                                    <option value="24" >Bermuda</option>
+                                    <option value="25" >Bhutan</option>
+                                    <option value="26" >Bolivia</option>
+                                    <option value="27" >Bosnia and Herzegovina</option>
+                                    <option value="28" >Botswana</option>
+                                    <option value="29" >Bouvet Island</option>
+                                    <option value="31" >British Indian Ocean Territory</option>
+                                    <option value="32" >Brunei Darussalam</option>
+                                    <option value="33" >Bulgaria</option>
+                                    <option value="34" >Burkina Faso</option>
+                                    <option value="35" >Burundi</option>
+                                    <option value="36" >Cambodia</option>
+                                    <option value="37" >Cameroon</option>
+                                    <option value="39" >Cape Verde</option>
+                                    <option value="40" >Cayman Islands</option>
+                                    <option value="41" >Central African Republic</option>
+                                    <option value="42" >Chad</option>
+                                    <option value="43" >Chile</option>
+                                    <option value="46" >Cocos (Keeling) Islands</option>
+                                    <option value="47" >Colombia</option>
+                                    <option value="48" >Comoros</option>
+                                    <option value="49" >Congo</option>
+                                    <option value="50" >Cook Islands</option>
+                                    <option value="51" >Costa Rica</option>
+                                    <option value="52" >Cote D'Ivoire</option>
+                                    <option value="54" >Cuba</option>
+                                    <option value="55" >Cyprus</option>
+                                    <option value="56" >Czech Republic</option>
+                                    <option value="57" >Denmark</option>
+                                    <option value="58" >Djibouti</option>
+                                    <option value="59" >Dominica</option>
+                                    <option value="60" >Dominican Republic</option>
+                                    <option value="61" >East Timor</option>
+                                    <option value="62" >Ecuador</option>
+                                    <option value="63" >Egypt</option>
+                                    <option value="64" >El Salvador</option>
+                                    <option value="65" >Equatorial Guinea</option>
+                                    <option value="66" >Eritrea</option>
+                                    <option value="67" >Estonia</option>
+                                    <option value="68" >Ethiopia</option>
+                                    <option value="69" >Falkland Islands (Malvinas)</option>
+                                    <option value="70" >Faroe Islands</option>
+                                    <option value="71" >Fiji</option>
+
+                                    <option value="72" >Finland</option>
+                                    <option value="75" >French Guiana</option>
+                                    <option value="76" >French Polynesia</option>
+                                    <option value="77" >French Southern Territories</option>
+                                    <option value="78" >Gabon</option>
+                                    <option value="79" >Gambia</option>
+                                    <option value="80" >Georgia</option>
+                                    <option value="82" >Ghana</option>
+                                    <option value="83" >Gibraltar</option>
+                                    <option value="84" >Greece</option>
+                                    <option value="85" >Greenland</option>
+                                    <option value="86" >Grenada</option>
+                                    <option value="87" >Guadeloupe</option>
+                                    <option value="88" >Guam</option>
+                                    <option value="89" >Guatemala</option>
+                                    <option value="90" >Guinea</option>
+                                    <option value="91" >Guinea-bissau</option>
+                                    <option value="92" >Guyana</option>
+                                    <option value="93" >Haiti</option>
+                                    <option value="94" >Heard and Mc Donald Islands</option>
+
+                        </select>
+                    <i>*</i>    
+                    </li>
+                    <li>
+                    	<span>State/Province/Region:</span>
+                        <select class="add_select">
+                        	<option value="190" >Alabama</option>
+                            <option value="191" >Alaska</option>
+                            <option value="192" >American Samoa</option>
+                            <option value="193" >Arizona</option>
+                            <option value="194" >Arkansas</option>
+                            <option value="195" >Armed Forces Africa</option>
+                            <option value="196" >Armed Forces Americas</option>
+                            <option value="197" >Armed Forces Canada</option>
+                            <option value="198" >Armed Forces Europe</option>
+                            <option value="199" >Armed Forces Middle East</option>
+                            <option value="200" >Armed Forces Pacific</option>
+                            <option value="201" >California</option>
+                            <option value="202" >Colorado</option>
+                            <option value="203" >Connecticut</option>
+                            <option value="204" >Delaware</option>
+                            <option value="205" >District of Columbia</option>
+                            <option value="206" >Federated States Of Micronea </option>
+                            <option value="207" >Florida</option>
+                            <option value="208" >Georgia</option>
+                            <option value="209" >Guam</option>
+                            <option value="210" >Hawaii</option>
+                            <option value="211" >Idaho</option>
+                            <option value="212" >Illinois</option>
+                            <option value="213" >Indiana</option>
+                            <option value="214" >Iowa</option>
+                            <option value="215" >Kansas</option>
+                            <option value="216" >Kentucky</option>
+                            <option value="217" >Louisiana</option>
+                            <option value="218" >Maine</option>
+                            <option value="219" >Marshall Islands</option>
+                            <option value="220" >Maryland</option>
+                            <option value="221" >Massachusetts</option>
+                            <option value="222" >Michigan</option>
+                            <option value="223" >Minnesota</option>
+                            <option value="224" >Mississippi</option>
+                            <option value="225" >Missouri</option>
+                            <option value="226" >Montana</option>
+                            <option value="227" >Nebraska</option>
+                            <option value="228" >Nevada</option>
+                            <option value="229" >New Hampshire</option>
+                            <option value="230" >New Jersey</option>
+                            <option value="231" >New Mexico</option>
+                            <option value="232" >New York</option>
+                            <option value="233" >North Carolina</option>
+                            <option value="234" >North Dakota</option>
+                            <option value="235" >Northern Mariana Islands</option>
+                            <option value="236" >Ohio</option>
+                            <option value="237" >Oklahoma</option>
+                            <option value="238" >Oregon</option>
+                            <option value="239" >Palau</option>
+                            <option value="240" >Pennsylvania</option>
+                            <option value="242" >Rhode Island</option>
+                            <option value="243" >South Carolina</option>
+                            <option value="244" >South Dakota</option>
+                            <option value="245" >Tennessee</option>
+                            <option value="246" >Texas</option>
+                            <option value="247" >Utah</option>
+                            <option value="248" >Vermont</option>
+                            <option value="249" >Virgin Islands</option>
+                            <option value="250" >Virginia</option>
+                            <option value="251" >Washington</option>
+                            <option value="252" >West Virginia</option>
+                            <option value="253" >Wisconsin</option>
+                            <option value="254" >Wyoming</option>
+                            <option value="4480" >Puerto Rico</option>
+
+                        </select>
+                    <i>*</i>    
+                    </li>
+                    <li><span> Telephone:</span><input type="text" value="123113"><i>*</i></li>
+                    <li><span>ZIP/Post Code:</span><input type="text" value="123113"><i>*</i></li>
+                    <span> <input type="radio" class="radio" name="zhifu1">Set as default shipping address</span>
+                    <li><input type="button" class="affirm" value="Submit"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="shopping_item">
+        	<h3>Payment method</h3>
+            <div class="shopping_cont">
+            	<ul class="shopping_list">
+                    <span> <input type="radio" class="radio" name="zhifu1">
+                    <img src="images/paypal.jpg"  >Paypal</span>
+                    <span> <input type="radio" class="radio" name="zhifu2">
+                    <img src="images/card.jpg"  >Credit or Debit Card</span> 
+ 
+                </ul>
+            </div>
+        </div>
+        <div class="shopping_item">
+        	<h3>Shopping Cart Details  </h3>
+            <div class="shopping_cont">
+            	<div class="car_head">
+                	<div class="t_name">Product(s)</div><div class="t_price">Price</div><div class="t_return">Favorable </div><div class="t_num">Qty</div><div class="t_subtotal">Total</div>	
+                </div>
+                <div class="buy_con">
+                	<div class="t_name">
+                    	<div class="buy_imgSm">
+                    		<img src="images/des_sm.jpg">
+                        </div>
+                        <div class="buy_info">
+                        	<p><a href="">DJI Phantom 3 Quadcopter</a></p>
+                            <p>DJI Phantom 3 Quadcopter</p>
+                            </div>
+                        </div><div class="t_price">USD $190.00</div><div class="t_return">USD $190.00</div><div class="t_num ">1</div><div class="t_subtotal red">USD $190.00</div>	 
+                    </div>
+                </div>
+                <a href="#" class="remarks">You can leave a message for this seller</a>
+                <textarea class="message" >You can leave a message for this seller......</textarea>  
+            </div>
+            <div class="shopping_item clearfix">
+                <h3>Order settlement</h3>
+                <div class="shopping_cont fr">
+                    <div class="Total">
+                    	<i>Sub-Total:：</i>
+                        <span>USD $190000.00</span>
+                    </div>
+                    <div class="submit_bnt">
+                    	<input type="button" value="Proceed to Checkout" class="cart_btn">
+                        
+                    </div>
+                </div>
+        	</div>
+        </div>
+     </div>
+	<!--footer-->
+    <div class="footer clearfix">
+    	<div class="comWidth">
+        	<ul class="community">
+            	<li><span><img src="images/icon_1.jpg"></span><a href="#">Find us on Google+</a></li>
+                <li><span><img src="images/icon_2.jpg"></span><a href="#"> Watch us on Youtube</a> </li>
+                <li><span><img src="images/icon_3.jpg"></span><a href="#"> Like us on Twitter</a> </li>
+                <li><span><img src="images/icon_4.jpg"></span><a href="#"> Follow us on Facebook</a></li>
+            </ul>
+            <p class="nav_map">
+            	<a href="#">Multi-Rotors</a><i>|</i>
+                <a href="#">RC Helicopters</a><i>|</i>
+                <a href="#">Spare Parts</a><i>|</i>
+                <a href="#">FPV Series</a><i>|</i>
+                <a href="#">Radio System</a><i>|</i>
+                <a href="#">Batteries & Chargers</a><i>|</i>
+                <a href="#">Planes/Cars/Boats</a><i>|</i>
+                <a href="#">Free Shipping</a><i>|</i>
+                <a href="#">EU Warehouse</a><i>|</i>
+                <a href="#">New Arrivals</a><i>|</i>
+            </p>
+<p class="partners"><a href="#"><img src="images/Creidt card.jpg" alt="logo"></a><a href="#"><img src="images/DHL.jpg" alt="logo"></a><a href="#"><img src="images/EMS.jpg" alt="logo"></a><a href="#"><img src="images/Hongkong_Post_logo.png" alt="logo"></a></a><a href="#"><img src="images/paymentbtn.jpg" alt="logo"></a></p>
+</div>
+			<p class="copyright">Copyright © 2010-2016 <a href="#">HobbyWOW.com</a> All rights reserved.</p>
+</div>
+    </div>
+ 	<div class="hr_5"></div>
+</body>
+</html>
